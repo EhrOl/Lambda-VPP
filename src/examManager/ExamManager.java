@@ -1,6 +1,8 @@
 package examManager;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.ToDoubleFunction;
@@ -25,6 +27,13 @@ public class ExamManager {
     }
     
     public void printScores() {
+        
+        Comparator<Double> descendingComparator = (o1, o2) -> {
+             int result = 0;
+             if(o1 < o2) result = 1;
+             if(o1 > o2) result = -1;
+             return result;        };
+        Collections.sort(myScores, descendingComparator);
        myScores.forEach(score -> System.out.println(score));
     }
     
