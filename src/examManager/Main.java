@@ -31,5 +31,9 @@ public class Main {
         System.out.println("The lowest score is " + examManager.customCalculation(lowestScore));
         
         System.out.println("The first score is " + examManager.customCalculation(myScores -> myScores.get(0)));
+        
+        examManager.printScores();
+        System.out.println("---");
+        examManager.printSelectedScores(score -> score>55);
     }
 }
